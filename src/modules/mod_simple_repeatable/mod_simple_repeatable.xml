@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<extension type="module" version="3.1.0" client="administrator" method="upgrade">
+
+    <name>Whykiki Simple Repeatable</name>
+
+    <author>Whykiki/</author>
+
+    <version>1.0.0</version>
+
+    <description>Whykiki Simple Repeatble
+
+        <![CDATA[
+<script type="text/javascript">
+
+jQuery('#myTabTabs').remove();
+
+jQuery( document ).ready(function() {
+    var tabsStart = '<ul class="nav nav-tabs" id="myTabTabs"><li class=""><a href="#general" data-toggle="tab">Modul</a></li><li class=""><a href="#assignment" data-toggle="tab">Menüzuweisung</a></li><li class="active"><a href="#attrib-Einstellungen" data-toggle="tab">Einstellungen</a></li>';
+    var tabsEnd = '<li class=""><a href="#attrib-advanced" data-toggle="tab">Erweitert</a></li><li class=""><a href="#permissions" data-toggle="tab">Modulberechtigungen</a></li>';
+    var settingName = jQuery('#jform_params_fileloading').find("option:selected").text();
+    var tabsMiddle = '<li class=""><a href="#attrib-' + settingName + '" data-toggle="tab">Inhalte verwalten</a></li>';
+    jQuery('.form-horizontal').prepend(tabsStart + tabsMiddle + tabsEnd);
+    jQuery( "#jform_params_fileloading" ).change(function() {
+         jQuery('#myTabTabs').remove();
+         var settingName = jQuery(this).find("option:selected").text();
+         var tabsMiddle = '<li class=""><a href="#attrib-' + settingName + '" data-toggle="tab">Inhalte verwalten</a></li>';
+         console.log(tabsMiddle);
+         jQuery('.form-horizontal').prepend(tabsStart + tabsMiddle + tabsEnd);
+    })
+});
+
+</script>
+]]>
+
+    </description>
+
+
+
+    <files>
+        <filename module="mod_simple_repeatable">mod_simple_repeatable.php</filename>
+        <filename>mod_simple_repeatable.xml</filename>
+        <filename>repeatable_form.xml</filename>
+        <filename>contentliste_form.xml</filename>
+        <filename>image_menu_form.xml</filename>
+        <filename>logobar_form.xml</filename>
+        <filename>modalcontent_form.xml</filename>
+        <filename>index.html</filename>
+        <filename>helper.php</filename>
+        <folder>tmpl</folder>
+        <folder>css</folder>
+    </files>
+    <config>
+
+        <fields name="params">
+
+            <fieldset name="Einstellungen" label="Einstellungen" class="tester">
+
+                <field name="module_headline"
+                       label="Modulheadline"
+                       size="30"
+                       type="text"
+                />
+
+                <field
+                        name="moduleclass_sfx"
+                        type="textarea"
+                        label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+                        description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"
+                        rows="3"
+                />
+
+                <field name="fileloading" type="list" default="" required="true" label="Bitte auswählen" description="">
+                    <option value="0">Markenlogos</option>
+                </field>
+            </fieldset>
+        </fields>
+
+        <fields name="params">
+
+            <fieldset name="Quicklinks" label="Repeatables" showon="fileloading:0">
+
+              <field name="imageSize"
+                     label="Image Size"
+                     size="30"
+                     type="text"
+              />
+
+                <field name="quicklinks" type="subform"
+                       formsource="modules/mod_simple_repeatable/markenlogos_form.xml"
+                       multiple="true"
+                       label="Inhalte verwalten"
+                       description="Inhalte zum Duplizieren" />
+
+            </fieldset>
+        </fields>
+
+    </config>
+
+</extension>

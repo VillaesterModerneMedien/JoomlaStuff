@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form>
+
+    <field name="titel" type="text" label="Link Titel" />
+
+    <field name="link" type="text" label="Link" />
+
+    <field name="icon" type="text" label="Icon aus Font Awesome (siehe Desc)" desc="https://fontawesome.com/v5/cheatsheet" />
+    <field name="target" type="list" default="" label="Ziel wählen" description="">
+      <option value="_blank">Blank</option>
+      <option value="_self">Self</option>
+    </field>
+</form>

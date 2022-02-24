@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form>
+    <field name="logo" type="media" label="Logo" />
+    <field name="title" type="text" label="Titel" />
+    <field name="link" type="text" label="Link" />
+
+</form>
