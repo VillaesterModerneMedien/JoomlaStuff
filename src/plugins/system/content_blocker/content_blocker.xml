@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.1" type="plugin" group="system" method="upgrade">
+	<name>plg_system_content_blocker</name>
+	<author>Kiki Schueling</author>
+	<creationDate>October 2021</creationDate>
+	<authorEmail>info@whykiki.de</authorEmail>
+	<authorUrl>whykiki.de</authorUrl>
+	<version>1.0.0</version>
+	<description>Content Blocker</description>
+	<files>
+		<filename plugin="content_blocker">content_blocker.php</filename>
+    <folder>layouts</folder>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+				  name="youtube"
+				  type="editor"
+				  label="Youtube"
+          filter="RAW"
+				  />
+				<field
+				  name="google"
+				  type="editor"
+				  label="Google"
+          filter="RAW"
+				  />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

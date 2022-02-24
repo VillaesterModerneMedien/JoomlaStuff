@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <field name="classes"
+           label="PLG_SYS_VGRD_EXTERNALLINKS_EXCLUDECLASS"
+           type="text"
+    />
+</form>

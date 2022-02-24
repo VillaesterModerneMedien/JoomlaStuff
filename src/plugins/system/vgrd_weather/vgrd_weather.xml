@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.1" type="plugin" group="system" method="upgrade">
+	<name>plg_system_vgrd_weather</name>
+	<author>Kiki Schueling</author>
+	<creationDate>Oktober 2021</creationDate>
+	<authorEmail>info@whykiki.de</authorEmail>
+	<authorUrl>whykiki.de</authorUrl>
+	<version>1.0.0</version>
+	<description>VGRD Wetteranzeige für Standort.</description>
+	<files>
+		<filename plugin="vgrd_weather">vgrd_weather.php</filename>
+    <folder>layouts</folder>
+    <folder>cache</folder>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+        <field
+          name="city"
+          type="text"
+          label="Stadt"
+          default="Berlin"
+        />
+
+        <field
+          name="apikey"
+          type="text"
+          label="API Key"
+          default=""
+        />
+      </fieldset>
+
+		</fields>
+	</config>
+</extension>

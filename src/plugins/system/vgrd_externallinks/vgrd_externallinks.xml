@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.0" type="plugin" group="system" method="upgrade">
+    <name>plg_sys_vgrd_externallinks</name>
+    <author>Kiki Schuelling</author>
+    <creationDate>February 2021</creationDate>
+    <copyright>Copyright (C) 2021 Sercosys</copyright>
+    <authorEmail>c.schuelling@sercosys.de</authorEmail>
+    <authorUrl>sercosys.de</authorUrl>
+    <version>1.0</version>
+    <description>PLG_SYS_VGRD_EXTERNALLINKS_XML_DESCRIPTION</description>
+    <files>
+        <folder>forms</folder>
+        <filename plugin="vgrd_externallinks">vgrd_externallinks.php</filename>
+    </files>
+    <media destination="plg_system_vgrd_externallinks" folder="media">
+        <folder>js</folder>
+    </media>
+    <languages folder="language">
+        <language tag="en-GB">en-GB.plg_system_vgrd_externallinks.ini</language>
+        <language tag="en-GB">en-GB.plg_system_vgrd_externallinks.sys.ini</language>
+        <language tag="de-DE">de-DE.plg_system_vgrd_externallinks.ini</language>
+        <language tag="de-DE">de-DE.plg_system_vgrd_externallinks.sys.ini</language>
+    </languages>
+
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field name="excludeddomains" multiple="true"
+                       type="subform" layout="joomla.form.field.subform.repeatable-table"
+                       label="PLG_SYS_VGRD_EXTERNALLINKS_WARNING_EXCLUDEDOMAINS_LABEL"
+                       description="PLG_SYS_VGRD_EXTERNALLINKS_WARNING_EXCLUDEDOMAINS_DESC"
+                       formsource="plugins/system/vgrd_externallinks/forms/domains.xml"
+                />
+                <field name="excludedclasses" multiple="true"
+                       type="subform" layout="joomla.form.field.subform.repeatable-table"
+                       label="PLG_SYS_VGRD_EXTERNALLINKS_WARNING_EXCLUDECLASSES_LABEL"
+                       description="PLG_SYS_VGRD_EXTERNALLINKS_WARNING_EXCLUDECLASSES_DESC"
+                       formsource="plugins/system/vgrd_externallinks/forms/classes.xml"
+                />
+                <field name="excludedurls" multiple="true"
+                       type="subform" layout="joomla.form.field.subform.repeatable-table"
+                       label="PLG_SYS_VGRD_EXTERNALLINKS_WARNING_EXCLUDEURLS_LABEL"
+                       description="PLG_SYS_VGRD_EXTERNALLINKS_WARNING_EXCLUDEURLS_DESC"
+                       formsource="plugins/system/vgrd_externallinks/forms/urls.xml"
+                />
+
+              <field name="warningtext"
+                     type="editor"
+                     label="PLG_SYS_VGRD_EXTERNALLINKS_WARNING_MESSAGE"
+                     description=""
+                     width="500"
+                     filter="RAW" />
+
+              <field name="modalTemplate"
+                     type="list"
+                     default="1"
+                     label="PLG_SYS_VGRD_EXTERNALLINKS_TEMPLATE"
+                     description=""
+              >
+                <option value="0">UIKit 2 (Warp)</option>
+                <option value="1">UIKit 3 (Yootheme)</option>
+              </field>
+
+              <field name="btnTextCancel"
+                     type="text"
+                     default="Abbrechen"
+                     label="PLG_SYS_VGRD_EXTERNALLINKS_TEXT_BTN_CANCEL"
+                     description=""
+                     size="10"
+              />
+
+              <field name="btnTextOK"
+                     type="text"
+                     default="Weiter"
+                     label="PLG_SYS_VGRD_EXTERNALLINKS_TEXT_BTN_OK"
+                     description=""
+                     size="10"
+              />
+            </fieldset>
+
+
+        </fields>
+    </config>
+    <updateservers>
+      <server type="extension" priority="1" name="VGRD Links">https://github.com/TheWhykiki/VGRD_External</server>
+    </updateservers>
+</extension>

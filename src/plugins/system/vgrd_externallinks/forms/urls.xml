@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <field name="urls"
+           label="PLG_SYS_VGRD_EXTERNALLINKS_EXCLUDEDURL"
+           type="text"
+    />
+</form>
+
