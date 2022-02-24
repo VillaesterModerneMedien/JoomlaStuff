@@ -15,3 +15,13 @@ Gut nutzbar mit dsem Yootheme Gallera Custom Element
 In Verbindung mit Open Weather API könmnen hier Wetterdaten von Orten angezeigt werden -> Icons (FA), Temeperatur usw
   </li>
   </ul>
+  
+  
+# Module
+<ul>
+  <li>
+<strong>Simple Repeatable:</strong><br>
+Einfach erweiterbares Modulm mit verschiedenen Templates um jede Art von wiederholbarem Content abzubilden.
+  </li>
+
+  </ul>
