@@ -51,6 +51,10 @@
             "label": "Meta",
             "source": true
         },
+        "galleryfield": {
+            "label": "Galerie Custom Field?",
+            "source": true
+        },
         "bildpfad": {
             "label": "Bildpfad",
             "source": true
@@ -103,7 +107,8 @@
                 {
                     "title": "Content",
                     "fields": [
-						"bildpfad",
+                        "galleryfield",
+                        "bildpfad",
                         "image",
                         "video",
                         "_media",

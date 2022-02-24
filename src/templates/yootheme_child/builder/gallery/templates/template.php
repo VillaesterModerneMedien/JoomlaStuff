@@ -75,74 +75,97 @@ $filter_cell = $this->el('div', [
 ?>
 
 <?php if ($tags) : ?>
-<?= $el($props, $attrs) ?>
+    <?= $el($props, $attrs) ?>
 
     <?php if ($filter_horizontal = in_array($props['filter_position'], ['left', 'right'])) : ?>
-    <?= $filter_grid($props) ?>
+        <?= $filter_grid($props) ?>
         <?= $filter_cell($props) ?>
     <?php endif ?>
 
-        <?= $this->render("{$__dir}/template-nav", compact('props')) ?>
+    <?= $this->render("{$__dir}/template-nav", compact('props')) ?>
 
     <?php if ($filter_horizontal) : ?>
         </div>
         <div>
     <?php endif ?>
-        <?= $grid($props) ?>
-        <?php foreach ($children as $child) : ?>
+    <?= $grid($props) ?>
+    <?php foreach ($children as $child) : ?>
         <?= $cell($props, ['data-tag' => $child->tags], $builder->render($child, ['element' => $props])) ?>
-        <?php endforeach ?>
-        </div>
+    <?php endforeach ?>
+    </div>
 
     <?php if ($filter_horizontal) : ?>
         </div>
-    </div>
+        </div>
     <?php endif ?>
 
-</div>
+    </div>
 <?php else : ?>
-<?= $el($props, $attrs) ?>
+    <?= $el($props, $attrs) ?>
 
 
-<?php
-//###############################################################################################
-	
-if(!empty($children[0]->props['bildpfad'])){
-	$path = JPATH_SITE . '/' . $children[0]->props['bildpfad'];
-
-	$files = JFolder::files($path, '.', false, false,array(), array('.pdf'));
-	$newChildren = [];
-
-	foreach($files as $file){
-		$content = [
-			'type' => 'gallery_item',
-			'props' => [
-				'title' => '',
-				'image' => '/' . $children[0]->props['bildpfad'] . $file
-			]
-		];
-		$newChildren[] =  (object) $content;
-	};
-	$app = Joomla\CMS\Factory::getApplication();
-	
-
-	if($app->getName() === 'site')
-	{
-		$children = $newChildren;
-	}
-}
-
-
+    <?php
 //###############################################################################################
 
-?>
+    if(!empty($children[0]->props['bildpfad'])){
+        $path = JPATH_SITE . '/' . $children[0]->props['bildpfad'];
+
+        $files = JFolder::files($path, '.', false, false,array(), array('.pdf'));
+        $newChildren = [];
+
+        foreach($files as $file){
+            $content = [
+                'type' => 'gallery_item',
+                'props' => [
+                    'title' => '',
+                    'image' => '/' . $children[0]->props['bildpfad'] . $file
+                ]
+            ];
+            $newChildren[] =  (object) $content;
+        };
+        $app = Joomla\CMS\Factory::getApplication();
+
+
+        if($app->getName() === 'site')
+        {
+            $children = $newChildren;
+        }
+    }
+    else if(!empty($children[0]->props['galleryfield']))
+    {
+        $images = explode(',', $children[0]->props['galleryfield']);
+
+        $newChildren = [];
+
+        foreach($images as $image){
+            $content = [
+                'type' => 'gallery_item',
+                'props' => [
+                    'title' => '',
+                    'image' => '/' . $image
+                ]
+            ];
+            $newChildren[] =  (object) $content;
+        };
+        $app = Joomla\CMS\Factory::getApplication();
+
+        if($app->getName() === 'site')
+        {
+            $children = $newChildren;
+        }
+    }
+
+
+//###############################################################################################
+
+    ?>
 
     <?= $grid($props) ?>
     <?php foreach ($children as $child) : ?>
 
-    <?= $cell($props, $builder->render($child, ['element' => $props])) ?>
+        <?= $cell($props, $builder->render($child, ['element' => $props])) ?>
     <?php endforeach ?>
     </div>
 
-</div>
+    </div>
 <?php endif ?>
