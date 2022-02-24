@@ -165,7 +165,7 @@ class JFormFieldImageschoose extends JFormFieldText
         $html .= '<div class="modal-content">';
         $html .= '<div class="modal-header">';
         $html .= '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>';
-        $html .= '<h3 id="articlesModalLabel">' . Text::_('WHYLINK_ARTICLEHEADLINE') . '</h3>';
+        $html .= '<h3 id="articlesModalLabel">' . Text::_('IMAGESCHOOSE_HEADLINE') . '</h3>';
         $html .= '</div>';
         $html .= '<div class="modal-body">';
         //TODO STartpfad mitgeben
@@ -173,7 +173,7 @@ class JFormFieldImageschoose extends JFormFieldText
         $html .= '</div>';
         $html .= '<div class="modal-footer">';
         $html .= '<button class="btn" id="addImages">' . Text::_('ADD') . '</button>';
-        $html .= '<button class="btn closeImagesModal">' . Text::_('WHYLINK_CLOSE') . '</button>';
+        $html .= '<button class="btn closeImagesModal">' . Text::_('CLOSE') . '</button>';
         $html .= '</div>';
         $html .= '</div>';
         $html .= '</div>';
