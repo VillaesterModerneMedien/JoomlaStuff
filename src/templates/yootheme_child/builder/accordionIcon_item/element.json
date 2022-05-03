@@ -1,0 +1,78 @@
+{
+    "@import": "./element.php",
+    "name": "accordionIcon_item",
+    "title": "Item",
+    "width": 500,
+    "placeholder": {
+        "props": {
+            "title": "Title",
+            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            "image": ""
+        }
+    },
+    "templates": {
+        "render": "./templates/template.php",
+        "content": "./templates/content.php"
+    },
+    "fields": {
+        "title": {
+            "label": "Title",
+            "source": true
+        },
+        "content": {
+            "label": "Content",
+            "type": "editor",
+            "source": true
+        },
+        "icon": {
+            "label": "Icon",
+            "description": "Instead of using a custom image, you can click on the pencil to pick an icon from the icon library.",
+            "type": "icon",
+            "source": true,
+            "enable": "!image"
+        },
+        "icon_color": {
+            "label": "Icon Color",
+            "description": "Set the icon color.",
+            "type": "select",
+            "options": {
+                "None": "",
+                "Muted": "muted",
+                "Emphasis": "emphasis",
+                "Primary": "primary",
+                "Secondary": "secondary",
+                "Success": "success",
+                "Warning": "warning",
+                "Danger": "danger"
+            },
+            "enable": "!image"
+        },
+        "image": "${builder.image}",
+        "image_alt": {
+            "label": "Image Alt",
+            "source": true,
+            "enable": "image"
+        },
+        "link": "${builder.link}",
+        "link_text": {
+            "label": "Link Text",
+            "description": "Set a different link text for this item.",
+            "source": true,
+            "enable": "link"
+        },
+        "status": "${builder.statusItem}",
+        "source": "${builder.source}"
+    },
+    "fieldset": {
+        "default": {
+            "type": "tabs",
+            "fields": [
+                {
+                    "title": "Content",
+                    "fields": ["title", "content","icon","icon_color", "image", "image_alt", "link", "link_text"]
+                },
+                "${builder.advancedItem}"
+            ]
+        }
+    }
+}
