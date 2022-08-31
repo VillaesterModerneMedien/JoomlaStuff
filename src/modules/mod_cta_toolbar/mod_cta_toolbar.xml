@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <extension type="module" client="site" method="upgrade">
+        <name>CTA Toolbar</name>
+        <author>Mario Hewera</author>
+        <creationDate>Mai 2022</creationDate>
+        <copyright>(C) 2022 Mario Hewera</copyright>
+        <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+        <authorEmail>mh@villaester.de</authorEmail>
+        <authorUrl>www.villaester.de</authorUrl>
+        <version>1.0.0</version>
+        <description>Kleine Call to action Toolbar</description>
+        <namespace path="src">Joomla\Module\CTAToolbar</namespace>
+        <files>
+            <filename module="mod_cta_toolbar">mod_cta_toolbar.php</filename>
+            <filename>mod_cta_toolbar.xml</filename>
+            <filename>index.html</filename>
+            <folder>src</folder>
+            <folder>layouts</folder>
+            <folder>tmpl</folder>
+            <folder>assets</folder>
+        </files>
+  <!--      <languages>
+            <language tag="en-GB">language/en-GB/mod_feed.ini</language>
+            <language tag="en-GB">language/en-GB/mod_feed.sys.ini</language>
+        </languages>
+        <help key="Site_Modules:_Feed_Display" />
+        -->
+        <config>
+            <fields name="params">
+                <fieldset name="icons" label="Icons" class="ctaIconsContainer"
+                addfieldprefix="Joomla\Module\CTAToolbar\Site\Field"
+                >
+                    <field name="cta_modal"
+                           type="Ctamodal"
+                           hiddenlabel="true"
+                    />
+                    <field
+                            name="sublogos"
+                            type="subform"
+                            label="CTA Icons"
+                            description="CTA Icons"
+                            multiple="true"
+                            min="1"
+                            max="10"
+                    >
+                        <form>
+                            <field
+                                    name="url"
+                                    type="text"
+                                    label="URL"
+                                    description=""
+                            />
+                            <field
+                                    name="target"
+                                    default="_self"
+                                    type="list"
+                                    label="Target"
+                                    description=""
+                            >
+                                <option value="_self">Gleicher Tab</option>
+                                <option value="_blank">Neuer Tab</option>
+                                <option value="_parent">Elternfenster</option>
+                                <option value="_top">Ganzes Fenster</option>
+                            </field>
+                            <field
+                                    name="icon"
+                                    type="Icon"
+                                    label="Icon"
+                                    description=""
+                                    default=""
+                            />
+                        </form>
+                    </field>
+                </fieldset>
+                <fieldset name="Einstellungen" label="Einstellungen">
+                    <field
+                            name="position"
+                            default="top"
+                            type="list"
+                            label="Toolbar-Ausrichtung"
+                            description=""
+                    >
+                        <option value="top">oben</option>
+                        <option value="bottom">unten</option>
+                    </field>
+                    <field
+                            name="sticky"
+                            default="nonsticky"
+                            type="list"
+                            label="Sticky-Toolbar?"
+                            description=""
+                    >
+                        <option value="sticky">Ja</option>
+                        <option value="nonsticky">Nein</option>
+                    </field>
+                    <field
+                            name="height"
+                            type="text"
+                            default="fit-content"
+                            label="Toolbar-Höhe"
+                            description=""
+                    />
+                    <field
+                            name="width"
+                            type="text"
+                            default="100vw"
+                            label="Toolbar-Breite"
+                            description=""
+                    />
+                    <field
+                            name="backgroundcolor"
+                            type="color"
+                            default="#eee"
+                            format="rgba"
+                            label="Hintergrund-Farbe"
+                            description="" />
+                    <field
+                            name="iconcolor"
+                            type="color"
+                            default="#000"
+                            format="rgba"
+                            label="Icon-Farbe"
+                            description="" />
+                    <field
+                            name="spacing"
+                            default="space-between"
+                            type="list"
+                            label="Icon-Anordung"
+                            description=""
+                    >
+                        <option value="flex-start">Anfang</option>
+                        <option value="center">Mittig</option>
+                        <option value="flex-end">Ende</option>
+                        <option value="space-between">Space-between</option>
+                        <option value="space-around">Space-around</option>
+                    </field>
+                    <field
+                            name="size"
+                            default="30px"
+                            type="text"
+                            label="Icon-Größe"
+                            description=""
+                    />
+                </fieldset>
+                <fieldset name="advanced">
+                    <field
+                            name="layout"
+                            type="modulelayout"
+                            label="JFIELD_ALT_LAYOUT_LABEL"
+                            class="form-select"
+                            validate="moduleLayout"
+                    />
+
+                    <field
+                            name="moduleclass_sfx"
+                            type="textarea"
+                            label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+                            rows="3"
+                            validate="CssIdentifier"
+                    />
+
+                    <field
+                            name="cache"
+                            type="list"
+                            label="COM_MODULES_FIELD_CACHING_LABEL"
+                            default="1"
+                            filter="integer"
+                            validate="options"
+                    >
+                        <option value="1">JGLOBAL_USE_GLOBAL</option>
+                        <option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+                    </field>
+
+                    <field
+                            name="cache_time"
+                            type="number"
+                            label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+                            default="900"
+                            filter="integer"
+                    />
+                </fieldset>
+            </fields>
+        </config>
+    </extension>

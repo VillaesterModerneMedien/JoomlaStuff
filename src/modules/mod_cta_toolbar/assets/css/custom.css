@@ -1,0 +1,147 @@
+.top {
+  top: 0;
+  left: 0;
+  z-index: 9999999;
+}
+
+.bottom {
+  bottom: 0;
+  left: 0;
+  z-index: 9999999;
+}
+
+.flex-start {
+  justify-content: flex-start;
+}
+
+.flex-end {
+  justify-content: flex-end;
+}
+
+.center {
+  justify-content: center;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.space-around {
+  justify-content: space-around;
+}
+
+.sticky {
+  position: fixed;
+}
+
+.nonsticky {
+  position: absolute;
+}
+
+#wrapperfront {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+/*---------------BACKEND-------------*/
+.hide {
+  display: none !important;
+}
+
+#ctaContainer i {
+  font-size: 25px;
+  margin-right: 20px;
+}
+
+#ctaContainer button {
+  height: 42px;
+  font-size: 15px;
+}
+
+#ctaContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/*Iconauflistung*/
+.ctaIconlistWrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+.ctaIconOptions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  top: 2%;
+  width: 96%;
+  left: 2%;
+  height: 40px;
+}
+
+.ctaIconOptions select {
+  word-wrap: normal;
+  height: 100%;
+  width: 200px;
+}
+
+.ctaIconOptions input {
+  height: 100%;
+  width: calc(100% - 200px - 2%);
+  margin-left: 2%;
+}
+
+.ctaIconContent {
+  position: relative;
+  top: 4%;
+  width: 96%;
+  left: 2%;
+  overflow: scroll;
+  height: 92%;
+}
+
+.ctaIconlistStyle {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(15, minmax(0, 1fr));
+  padding: 0px;
+}
+
+.ctaIconlistStyle li {
+  font-size: 20px;
+  padding: 20px 5px;
+  cursor: pointer;
+  border: 0.5px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ctaIconlistStyle li:hover {
+  color: #007dbb;
+  font-size: 24px;
+  padding: 8px 3px;
+}
+
+.modal-content {
+  height: 90vh;
+  overflow: auto;
+}
+
+.modal-body {
+  padding: 40px !important;
+  overflow: hidden !important;
+}
+
+.modal-lg {
+  max-width: 90vw !important;
+  max-height: 90vh !important;
+}
+
+/*# sourceMappingURL=custom.css.map */
